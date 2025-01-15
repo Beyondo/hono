@@ -10,7 +10,7 @@ import type { MiddlewareHandler } from '../../types'
 import type { CookiePrefixOptions } from '../../utils/cookie'
 import { Jwt } from '../../utils/jwt'
 import '../../context'
-import type { ExtendedJsonWebKey } from '../../utils/jwt/jws'
+import type { HonoJsonWebKey } from '../../utils/jwt/jws'
 
 /**
  * JWK Auth Middleware for Hono.
@@ -38,7 +38,7 @@ import type { ExtendedJsonWebKey } from '../../utils/jwt/jws'
 
 export const jwk = (
   options: {
-    keys?: ExtendedJsonWebKey[] | (() => Promise<ExtendedJsonWebKey[]>)
+    keys?: HonoJsonWebKey[] | (() => Promise<HonoJsonWebKey[]>)
     jwks_uri?: string
     cookie?:
       | string

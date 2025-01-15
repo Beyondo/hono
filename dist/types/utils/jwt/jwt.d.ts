@@ -4,7 +4,7 @@
  * https://datatracker.ietf.org/doc/html/rfc7519
  */
 import type { SignatureAlgorithm } from './jwa';
-import type { ExtendedJsonWebKey, SignatureKey } from './jws';
+import type { HonoJsonWebKey, SignatureKey } from './jws';
 import type { JWTPayload } from './types';
 export interface TokenHeader {
     alg: SignatureAlgorithm;
@@ -14,7 +14,7 @@ export interface TokenHeader {
 export declare function isTokenHeader(obj: unknown): obj is TokenHeader;
 export declare const sign: (payload: JWTPayload, privateKey: SignatureKey, alg?: SignatureAlgorithm) => Promise<string>;
 export declare const verify: (token: string, publicKey: SignatureKey, alg?: SignatureAlgorithm) => Promise<JWTPayload>;
-export declare const verifyFromJwks: (token: string, keys: ExtendedJsonWebKey[]) => Promise<JWTPayload>;
+export declare const verifyFromJwks: (token: string, keys: HonoJsonWebKey[]) => Promise<JWTPayload>;
 export declare const decode: (token: string) => {
     header: TokenHeader;
     payload: JWTPayload;

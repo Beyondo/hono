@@ -9,5 +9,5 @@ export declare const Jwt: {
         header: import("./jwt").TokenHeader;
         payload: import("./types").JWTPayload;
     };
-    verifyFromJwks: (token: string, keys: import("./jws").ExtendedJsonWebKey[]) => Promise<import("./types").JWTPayload>;
+    verifyFromJwks: (token: string, keys: import("./jws").HonoJsonWebKey[]) => Promise<import("./types").JWTPayload>;
 };
